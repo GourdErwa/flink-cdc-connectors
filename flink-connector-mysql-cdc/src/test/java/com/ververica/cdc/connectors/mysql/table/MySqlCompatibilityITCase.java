@@ -69,7 +69,7 @@ public class MySqlCompatibilityITCase {
     private final StreamTableEnvironment tEnv =
             StreamTableEnvironment.create(
                     env,
-                    EnvironmentSettings.newInstance().useBlinkPlanner().inStreamingMode().build());
+                    EnvironmentSettings.newInstance().inStreamingMode().build());
 
     @Before
     public void setup() throws Exception {

@@ -47,7 +47,7 @@ public class TiDBConnectorITCase extends TiDBTestBase {
     private final StreamTableEnvironment tEnv =
             StreamTableEnvironment.create(
                     env,
-                    EnvironmentSettings.newInstance().useBlinkPlanner().inStreamingMode().build());
+                    EnvironmentSettings.newInstance().inStreamingMode().build());
 
     @ClassRule public static LegacyRowResource usesLegacyRows = LegacyRowResource.INSTANCE;
 

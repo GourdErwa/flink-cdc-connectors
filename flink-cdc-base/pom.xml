@@ -19,7 +19,7 @@ under the License.
     <parent>
         <artifactId>flink-cdc-connectors</artifactId>
         <groupId>com.ververica</groupId>
-        <version>2.3-SNAPSHOT</version>
+        <version>2.3-SNAPSHOT-flink1.15</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -47,21 +47,20 @@ under the License.
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-planner_${scala.binary.version}</artifactId>
+            <artifactId>flink-table-planner_2.12</artifactId>
+            <version>${flink.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-runtime</artifactId>
             <version>${flink.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-runtime_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-test-utils_${scala.binary.version}</artifactId>
+            <artifactId>flink-test-utils</artifactId>
             <version>${flink.version}</version>
             <scope>test</scope>
         </dependency>
@@ -82,7 +81,7 @@ under the License.
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+            <artifactId>flink-streaming-java</artifactId>
             <version>${flink.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
@@ -106,7 +105,7 @@ under the License.
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-planner_${scala.binary.version}</artifactId>
+            <artifactId>flink-table-planner_2.12</artifactId>
             <version>${flink.version}</version>
             <type>test-jar</type>
             <scope>test</scope>

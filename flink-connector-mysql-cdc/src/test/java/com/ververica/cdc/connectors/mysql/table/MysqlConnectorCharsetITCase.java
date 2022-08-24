@@ -56,7 +56,7 @@ public class MysqlConnectorCharsetITCase extends MySqlSourceTestBase {
     private final StreamTableEnvironment tEnv =
             StreamTableEnvironment.create(
                     env,
-                    EnvironmentSettings.newInstance().useBlinkPlanner().inStreamingMode().build());
+                    EnvironmentSettings.newInstance().inStreamingMode().build());
 
     private final String testName;
     private final String[] snapshotExpected;

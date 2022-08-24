@@ -60,7 +60,7 @@ public class OracleConnectorITCase extends AbstractTestBase {
     private final StreamTableEnvironment tEnv =
             StreamTableEnvironment.create(
                     env,
-                    EnvironmentSettings.newInstance().useBlinkPlanner().inStreamingMode().build());
+                    EnvironmentSettings.newInstance().inStreamingMode().build());
 
     @Before
     public void before() throws Exception {

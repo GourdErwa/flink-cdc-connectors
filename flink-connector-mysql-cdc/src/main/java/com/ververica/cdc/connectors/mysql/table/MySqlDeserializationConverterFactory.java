@@ -21,7 +21,6 @@ import org.apache.flink.table.data.StringData;
 import org.apache.flink.table.types.logical.ArrayType;
 import org.apache.flink.table.types.logical.LogicalType;
 import org.apache.flink.table.types.logical.LogicalTypeFamily;
-import org.apache.flink.table.types.logical.utils.LogicalTypeChecks;
 
 import com.esri.core.geometry.ogc.OGCGeometry;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -115,7 +114,8 @@ public class MySqlDeserializationConverterFactory {
 
     private static Optional<DeserializationRuntimeConverter> createArrayConverter(
             ArrayType arrayType) {
-        if (LogicalTypeChecks.hasFamily(
+        // return logicalType.getTypeRoot().getFamilies().contains(family);
+        if (MySqlDeserializationConverterFactory.hasFamily(
                 arrayType.getElementType(), LogicalTypeFamily.CHARACTER_STRING)) {
             // only map MySQL SET type to Flink ARRAY<STRING> type
             return Optional.of(
@@ -147,5 +147,10 @@ public class MySqlDeserializationConverterFactory {
             // otherwise, fallback to default converter
             return Optional.empty();
         }
+    }
+
+    // 新增
+    private static boolean hasFamily(LogicalType logicalType, LogicalTypeFamily family) {
+        return logicalType.getTypeRoot().getFamilies().contains(family);
     }
 }

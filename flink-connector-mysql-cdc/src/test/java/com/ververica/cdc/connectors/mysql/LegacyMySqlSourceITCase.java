@@ -98,7 +98,6 @@ public class LegacyMySqlSourceITCase extends LegacyMySqlTestBase {
                 StreamTableEnvironment.create(
                         env,
                         EnvironmentSettings.newInstance()
-                                .useBlinkPlanner()
                                 .inStreamingMode()
                                 .build());
         final JSONObject expected =

@@ -43,7 +43,7 @@ public class SqlServerTimezoneITCase extends SqlServerTestBase {
     private final StreamTableEnvironment tEnv =
             StreamTableEnvironment.create(
                     env,
-                    EnvironmentSettings.newInstance().useBlinkPlanner().inStreamingMode().build());
+                    EnvironmentSettings.newInstance().inStreamingMode().build());
 
     @Parameterized.Parameter public String localTimeZone;
 
